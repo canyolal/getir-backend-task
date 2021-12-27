@@ -94,7 +94,6 @@ Response codes are listed below:
 - mongoose: mongodb connection
 - jest: testing
 - supertest: testing
-- cors: cross-origin resource sharing
 - dotenv: environment parameters
 - joi: payload validator
 - heroku: deployment
