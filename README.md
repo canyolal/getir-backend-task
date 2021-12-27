@@ -63,7 +63,8 @@ Response codes are listed below:
 
 ### In case of user error
 
-- <b>code:400, msg: 'informative text w.r.t. error', records: []</b> indicates that user entered an invalid value for payload keys
+- <b>code:400, msg: 'dynamic response w.r.t. error', records: []</b> indicates that user entered an invalid value for payload keys
+- <b>code:400, msg: 'missing payload', records: []</b> indicates that payload not found or payload not in JSON format
 - <b>code:404, msg: 'invalid url', records: []</b> indicates that user sent a request to invalid endpoint
 
 ## <b>Libraries</b>
