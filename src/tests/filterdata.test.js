@@ -13,7 +13,7 @@ describe('Checking Responses', () => {
       maxCount: 10
     }
     await api
-      .post('/postEndpoint')
+      .post('/filterdata')
       .send(newQuery)
       .expect(200)
       .expect('Content-Type', /application\/json/)
@@ -34,7 +34,7 @@ describe('Checking Responses', () => {
       maxCount: 5
     }
     await api
-      .post('/postEndpoint')
+      .post('/filterdata')
       .send(newQuery)
       .expect(200)
       .expect('Content-Type', /application\/json/)
@@ -56,7 +56,7 @@ describe('Checking Responses', () => {
       maxCount: 500
     }
     await api
-      .post('/postEndpoint')
+      .post('/filterdata')
       .send(newQuery)
       .expect(200)
       .expect('Content-Type', /application\/json/)
@@ -80,7 +80,7 @@ describe('Interface Requirements', () => {
       maxCount: 35
     }
     await api
-      .post('/postEndpoint')
+      .post('/filterdata')
       .send(newQuery)
       .expect(400)
       .expect('Content-Type', /application\/json/)
@@ -94,7 +94,7 @@ describe('Interface Requirements', () => {
       maxCount: 35
     }
     await api
-      .post('/postEndpoint')
+      .post('/filterdata')
       .send(newQuery)
       .expect(400)
       .expect('Content-Type', /application\/json/)
@@ -108,7 +108,7 @@ describe('Interface Requirements', () => {
       maxCount: 35
     }
     await api
-      .post('/postEndpoint')
+      .post('/filterdata')
       .send(newQuery)
       .expect(400)
       .expect('Content-Type', /application\/json/)
@@ -122,7 +122,7 @@ describe('Interface Requirements', () => {
       maxCount: 35
     }
     await api
-      .post('/postEndpoint')
+      .post('/filterdata')
       .send(newQuery)
       .expect(400)
       .expect('Content-Type', /application\/json/)
@@ -136,7 +136,7 @@ describe('Interface Requirements', () => {
       maxCount: 35
     }
     await api
-      .post('/postEndpoint')
+      .post('/filterdata')
       .send(newQuery)
       .expect(400)
       .expect('Content-Type', /application\/json/)
@@ -150,7 +150,7 @@ describe('Interface Requirements', () => {
       maxCount: -2
     }
     await api
-      .post('/postEndpoint')
+      .post('/filterdata')
       .send(newQuery)
       .expect(400)
       .expect('Content-Type', /application\/json/)
@@ -163,7 +163,7 @@ describe('Interface Requirements', () => {
       maxCount: 200
     }
     await api
-      .post('/postEndpoint')
+      .post('/filterdata')
       .send(newQuery)
       .expect(400)
       .expect('Content-Type', /application\/json/)
@@ -176,7 +176,7 @@ describe('Interface Requirements', () => {
       maxCount: 500
     }
     await api
-      .post('/postEndpoint')
+      .post('/filterdata')
       .send(newQuery)
       .expect(400)
       .expect('Content-Type', /application\/json/)

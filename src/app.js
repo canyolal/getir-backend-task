@@ -2,7 +2,7 @@ const express = require('express')
 const dotenv = require('dotenv')
 const loader = require('./loaders')
 const morgan = require('morgan')
-const assignmentRouter = require('./routes/assignment')
+const assignmentRouter = require('./routes/filterdata')
 const {unknownEndpoint} = require('./middlewares/unknownEndpoint')
 const cors = require('cors')
 
@@ -16,10 +16,10 @@ app.use(express.json())
 
 //log requests
 morgan.token('reqbody', (request) => JSON.stringify(request.body))
-app.use(morgan(':method :url :status :response-time ms - :res[content-length] Req.Body: :reqbody - Cont.Len: :req[content-length]'))
+app.use(morgan(':method :url :status Req.Body: :reqbody - :response-time ms - :res[content-length]'))
 
 //route management
-app.use('/postEndpoint',assignmentRouter)
+app.use('/filterdata',assignmentRouter)
 app.use(unknownEndpoint)
 
 module.exports = app

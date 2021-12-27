@@ -1,8 +1,10 @@
 # Getir Node.js Backend Task
 
-This program handles HTTP post request for a single endpoint named "/postEndpoint". This API does a simple filtering operation on a data from MongoDB collection and returns a response with matching results.
+https://can-yolal-getir-task.herokuapp.com/filterdata
 
-## Request Payload
+This Node.js program handles HTTP post request for a single endpoint named "/filterdata". This API does a simple filtering operation on a data from MongoDB collection and returns a response with matching results.
+
+## <b>Request Payload</b>
 
 The request payload will include a JSON with 4 fields.
 
@@ -20,7 +22,7 @@ Sample Input:\
 &nbsp;&nbsp;&nbsp;&nbsp;"maxCount": 3000\
 }
 
-## Response Payload
+## <b>Response Payload</b>
 
 Response payload have 3 main fields and returns JSON.
 
@@ -45,21 +47,32 @@ Response payload have 3 main fields and returns JSON.
 &nbsp;&nbsp;&nbsp;&nbsp;]\
 }
 
-## Response Codes
+## <b>Response Codes</b>
 
 Response codes are listed below:
 
-## In case of successful responses
+### In case of successful responses
 
-- code:0, msg: 'success', records: [obj] indicates that server found a matching doc(s)
-- code:0, msg: 'no match', records: [] indicates that server did not find any matching doc
+- <b>code:0, msg: 'success', records: [obj]</b> indicates that server found a matching doc(s)
+- <b>code:0, msg: 'no match', records: []</b> indicates that server did not find any matching doc
 
-## In case of server side errors
+### In case of server side errors
 
-- code:500, msg: 'error while processing', records: [] indicates that server encounter a problem while filtering docs
-- code:501, msg: 'error fetching from db', records: [] indicates that server encounter a problem while fetching docs
+- <b>code:500, msg: 'error while processing', records: []</b> indicates that server encounter a problem while filtering docs
+- <b>code:501, msg: 'error fetching from db', records: []</b> indicates that server encounter a problem while fetching docs
 
-## In case of user error
+### In case of user error
 
-- code:400, msg: 'informative text w.r.t. error', records: [] indicates that user entered an invalid value for payload keys
-- code:404, msg: 'invalid url', records: [] indicates that user sent a request to invalid endpoint
+- <b>code:400, msg: 'informative text w.r.t. error', records: []</b> indicates that user entered an invalid value for payload keys
+- <b>code:404, msg: 'invalid url', records: []</b> indicates that user sent a request to invalid endpoint
+
+## <b>Libraries</b>
+
+- Express: server management
+- mongoose: mongodb connection
+- jest: testing
+- supertest: testing
+- cors: cross-origin resource sharing
+- dotenv: environment parameters
+- joi: payload validator
+- heroku: deployment

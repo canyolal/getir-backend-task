@@ -1,4 +1,4 @@
-const {getAllDocs} = require('../services/assignment')
+const {getAllDocs} = require('../services/filterdata')
 const {filterCount} = require('../utils/helper')
 
 const postRequest =  (request,response) => {
