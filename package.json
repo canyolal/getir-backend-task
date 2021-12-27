@@ -29,5 +29,7 @@
   "jest": {
     "testEnvironment": "node"
   },
-  "proxy": "http://localhost:3003"
+  "engines": {
+    "node": "16.8.0"
+  }
 }
