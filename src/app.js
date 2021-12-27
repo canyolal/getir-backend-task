@@ -4,14 +4,12 @@ const loader = require('./loaders')
 const morgan = require('morgan')
 const assignmentRouter = require('./routes/filterdata')
 const {unknownEndpoint} = require('./middlewares/unknownEndpoint')
-const cors = require('cors')
 
 //load env file and start connection to mongodb
 dotenv.config()
 loader()
 
 const app = express()
-app.use(cors())
 app.use(express.json())
 
 //log requests
