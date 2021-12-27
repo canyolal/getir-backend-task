@@ -4,9 +4,10 @@ https://can-yolal-getir-task.herokuapp.com/filterdata
 
 This Node.js program handles HTTP post request for a single endpoint named "/filterdata". This API does a simple filtering operation on a data from MongoDB collection and returns a response with matching results.
 
-<code><b>gh repo clone</b> getir-nodejs-bootcamp/getir-nodejs-bootcamp-graduation-project-canyolal\
-<b>cd</b> getir-nodejs-bootcamp-graduation-project-canyolal
-</code>
+```
+gh repo clone getir-nodejs-bootcamp/getir-nodejs-bootcamp-graduation-project-canyolal
+cd getir-nodejs-bootcamp-graduation-project-canyolal
+```
 
 Download libraries with <code>npm install</code> first.
 
@@ -22,7 +23,9 @@ To execute single test <code>npm test -- -t "specific test name"</code>
 
 Sample request:
 
-<code><b>curl -X</b> POST https://can-yolal-getir-task.herokuapp.com/filterdata <b>-H</b> 'Content-Type: application/json' <b>-d</b> '{"startDate": "2015-01-15","endDate": "2015-01-21","minCount": 0,"maxCount": 55}'</code>
+```
+curl -X POST https://can-yolal-getir-task.herokuapp.com/filterdata -H 'Content-Type: application/json' -d '{"startDate": "2015-01-15","endDate": "2015-01-21","minCount": 0,"maxCount": 55}'
+```
 
 ## <b>Request Payload</b>
 
