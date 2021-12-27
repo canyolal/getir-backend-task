@@ -128,6 +128,7 @@ describe('Interface Requirements', () => {
       .expect(400)
       .expect('Content-Type', /application\/json/)
   })
+
   test('invalid month at end', async () => {
 
     const newQuery = {
@@ -142,6 +143,7 @@ describe('Interface Requirements', () => {
       .expect(400)
       .expect('Content-Type', /application\/json/)
   })
+
   test('invalid day at end', async () => {
 
     const newQuery = {
@@ -156,6 +158,7 @@ describe('Interface Requirements', () => {
       .expect(400)
       .expect('Content-Type', /application\/json/)
   })
+
   test('minCount < 0', async () => {
 
     const newQuery = {
@@ -170,7 +173,8 @@ describe('Interface Requirements', () => {
       .expect(400)
       .expect('Content-Type', /application\/json/)
   })
-  test('minCount more than maxCount', async () => {
+
+  test('minCount > maxCount', async () => {
 
     const newQuery = {
       startDate: "2016-01-01",
@@ -184,6 +188,22 @@ describe('Interface Requirements', () => {
       .expect(400)
       .expect('Content-Type', /application\/json/)
   })
+
+  test('End date < start date', async () => {
+
+    const newQuery = {
+      startDate: "2015-01-16",
+      endDate: "2015-01-01",
+      minCount: 30,
+      maxCount: 100
+    }
+    await api
+      .post('/filterdata')
+      .send(newQuery)
+      .expect(400)
+      .expect('Content-Type', /application\/json/)
+  })
+
   test('maxCount < 0', async () => {
 
     const newQuery = {
@@ -198,6 +218,7 @@ describe('Interface Requirements', () => {
       .expect(400)
       .expect('Content-Type', /application\/json/)
   })
+
   test('missing minCount field', async () => {
 
     const newQuery = {
@@ -211,6 +232,7 @@ describe('Interface Requirements', () => {
       .expect(400)
       .expect('Content-Type', /application\/json/)
   })
+
   test('missing endDate field', async () => {
 
     const newQuery = {
@@ -224,6 +246,7 @@ describe('Interface Requirements', () => {
       .expect(400)
       .expect('Content-Type', /application\/json/)
   })
+
   test('missing payload', async () => {
     await api
       .post('/filterdata')
@@ -235,6 +258,7 @@ describe('Interface Requirements', () => {
         expect(response.body.records.length).toBe(0)
       })
   })
+
   test('incorrect request method', async () => {
 
     const newQuery = {
