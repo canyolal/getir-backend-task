@@ -277,6 +277,36 @@ describe('Interface Requirements', () => {
         expect(response.body.records.length).toBe(0)
       })
   })
+
+  test('non-number at count field', async () => {
+
+    const newQuery = {
+      startDate: "2016-01-01",
+      endDate: "2020-01-01",
+      minCount: "Foo",
+      maxCount: 35
+    }
+    await api
+      .post('/filterdata')
+      .send(newQuery)
+      .expect(400)
+      .expect('Content-Type', /application\/json/)
+  })
+
+  test('non-string at date field', async () => {
+
+    const newQuery = {
+      startDate: true,
+      endDate: "2020-01-01",
+      minCount: 10,
+      maxCount: 35
+    }
+    await api
+      .post('/filterdata')
+      .send(newQuery)
+      .expect(400)
+      .expect('Content-Type', /application\/json/)
+  })
 })
 
 afterAll(() => {

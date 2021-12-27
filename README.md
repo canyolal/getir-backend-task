@@ -4,19 +4,37 @@ https://can-yolal-getir-task.herokuapp.com/filterdata
 
 This Node.js program handles HTTP post request for a single endpoint named "/filterdata". This API does a simple filtering operation on a data from MongoDB collection and returns a response with matching results.
 
+<code><b>gh repo clone</b> getir-nodejs-bootcamp/getir-nodejs-bootcamp-graduation-project-canyolal\
+<b>cd</b> getir-nodejs-bootcamp-graduation-project-canyolal
+</code>
+
+Download libraries with <code>npm install</code> first.
+
+Then, create .env file on project folder to set MongoDB instance.
+
+Start server with <code>npm start</code>
+
+Execute tests with <code>npm test</code>
+
+To execute single test <code>npm test -- -t "specific test name"</code>
+
+<code>npm run dev</code> to execute development mode.
+
+Sample request:
+
+<code><b>curl -X</b> POST https://can-yolal-getir-task.herokuapp.com/filterdata <b>-H</b> 'Content-Type: application/json' <b>-d</b> '{"startDate": "2015-01-15","endDate": "2015-01-21","minCount": 0,"maxCount": 55}'</code>
+
 ## <b>Request Payload</b>
 
 The request payload will include a JSON with 4 fields.
 
-- “startDate” and “endDate” fields will contain the date in a “YYYY-MM-DD” format. You
-  should filter the data using “createdAt”
-- “minCount” and “maxCount” are for filtering the data. Sum of the “count” array in
-  the documents should be between “minCount” and “maxCount”.
+- “startDate” and “endDate” fields will contain the date in a “YYYY-MM-DD” format.<b>(Type: String)</b>
+- “minCount” and “maxCount” are for filtering the data.<b>(Type: Number)</b>
 
 Sample Input:\
 {
 
-&nbsp;&nbsp;&nbsp;&nbsp;"startDate": "2016-01-26",\
+&nbsp;&nbsp;&nbsp;&nbsp;"startDate": "2016-01-26", \
 &nbsp;&nbsp;&nbsp;&nbsp;"endDate": "2018-02-02",\
 &nbsp;&nbsp;&nbsp;&nbsp;"minCount": 2700,\
 &nbsp;&nbsp;&nbsp;&nbsp;"maxCount": 3000\
@@ -26,9 +44,9 @@ Sample Input:\
 
 Response payload have 3 main fields and returns JSON.
 
-- “code” is for status of the request.
-- “msg” is for description of the code.
-- “records” will include all the filtered items according to the request.
+- “code” is for status of the request.<b>(Type: Number)</b>
+- “msg” is for description of the code.<b>(Type: String)</b>
+- “records” will include all the filtered items according to the request.<b>(Type: Array)</b>
 
 {\
 &nbsp;&nbsp;&nbsp;&nbsp;"code":0,\
